@@ -1,0 +1,1202 @@
+/* ==========================================================================
+   LINTERA (Lingkaran Interaktif untuk Matematika) - Welcome Page Styles
+   Desain: Flat, minimalis, ceria, dan ramah untuk siswa SMA.
+   Palet Warna:
+   - Biru langit: #63C9F4
+   - Biru utama: #2875FB
+   - Biru navy: #123B8A
+   - Oranye Luna: #F57200
+   - Kuning aksen: #FFD34E
+   - Putih: #FFFFFF
+   ========================================================================== */
+
+:root {
+  --color-sky-blue: #63C9F4;
+  --color-primary-blue: #2875FB;
+  --color-primary-hover: #1C64E8;
+  --color-navy: #123B8A;
+  --color-orange-luna: #F57200;
+  --color-accent-yellow: #FFD34E;
+  --color-white: #FFFFFF;
+  --color-text-dark: #123B8A;
+  --color-text-muted: #475569;
+  --font-family: 'Nunito', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-family);
+  color: var(--color-text-dark);
+  background-color: var(--color-sky-blue);
+  user-select: none;
+}
+
+/* App Wrapper: Menjaga komposisi lanskap penuh layar */
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   1. NAVBAR
+   Tinggi 80–100px pada desktop, minimalis, latar putih/putih transparan
+   ========================================================================== */
+.navbar {
+  width: 100%;
+  height: 90px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(226, 238, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  z-index: 30;
+  flex-shrink: 0;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.brand-logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.brand-name {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.brand-name .dot-i {
+  position: absolute;
+  top: 4px;
+  left: 28px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-orange-luna);
+  border-radius: 50%;
+}
+
+.smile-swoop {
+  position: absolute;
+  bottom: -6px;
+  left: 10px;
+  width: 90px;
+  height: 12px;
+  pointer-events: none;
+}
+
+.brand-divider {
+  width: 2px;
+  height: 32px;
+  background-color: #E2E8F0;
+}
+
+.brand-tagline {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.tagline-main {
+  font-weight: 800;
+  color: var(--color-navy);
+}
+
+.tagline-sub {
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--color-primary-blue);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-primary-blue);
+  border-radius: 2px;
+  transition: width 0.2s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Tombol hamburger bulat di navbar */
+.btn-round-menu {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #EBF5FF;
+  border: 1px solid #D0E5FF;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-round-menu:hover {
+  background-color: #D9EBFF;
+  transform: scale(1.05);
+}
+
+.btn-round-menu:active {
+  transform: scale(0.95);
+}
+
+.btn-round-menu svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ==========================================================================
+   2. HERO SECTION
+   Latar Landscape memenuhi area hero, 2 kolom: teks di kiri, Luna di kanan
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  background-image: url('assets/landscape.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-overlay-scrim {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 55%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.2) 70%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Kolom Kiri: Teks Sambutan & Tombol */
+.hero-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+  z-index: 10;
+}
+
+.title-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.sparkle-left {
+  position: absolute;
+  top: -18px;
+  left: -20px;
+  color: var(--color-accent-yellow);
+  pointer-events: none;
+}
+
+.sparkle-right {
+  position: absolute;
+  top: 4px;
+  right: -24px;
+  color: var(--color-accent-yellow);
+  pointer-events: none;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 4.5vw, 4.4rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.5px;
+}
+
+.title-halo {
+  color: var(--color-navy);
+  display: block;
+}
+
+.title-penjelajah {
+  position: relative;
+  display: inline-block;
+  color: var(--color-orange-luna);
+}
+
+.underline-swoosh {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 14px;
+  pointer-events: none;
+}
+
+.hero-description {
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.5;
+  max-width: 500px;
+  margin-top: 12px;
+}
+
+/* Tombol Mulai Jelajahi */
+.cta-container {
+  margin-top: 32px;
+}
+
+.btn-primary-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px 14px 32px;
+  border-radius: 9999px;
+  background-color: var(--color-primary-blue);
+  color: var(--color-white);
+  font-size: 1.15rem;
+  font-weight: 800;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 25px -4px rgba(40, 117, 251, 0.4);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-primary-explore:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 30px -4px rgba(40, 117, 251, 0.5);
+}
+
+.btn-primary-explore:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn-icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+  color: var(--color-primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary-explore:hover .btn-icon-circle {
+  transform: translateX(4px);
+}
+
+.btn-icon-circle svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2.5;
+}
+
+/* Kolom Kanan: Karakter Luna & Ornamen Referensi */
+.hero-right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+/* Karakter Luna (object-fit: contain, terlihat utuh) */
+.luna-wrapper {
+  position: relative;
+  width: 100%;
+  height: 85%;
+  max-height: 560px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: gentleBob 4s ease-in-out infinite;
+  z-index: 5;
+}
+
+.luna-image {
+  width: auto;
+  height: 100%;
+  max-height: 95%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.15));
+  pointer-events: none;
+}
+
+/* Plang Arah Matematika (+, ÷, ×) */
+.math-signpost {
+  position: absolute;
+  right: 16px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 6;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.12));
+}
+
+.signpost-top {
+  width: 18px;
+  height: 18px;
+  background-color: #8B5A2B;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.sign-arrow {
+  width: 84px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: 1rem;
+  border-radius: 4px;
+  margin: 2px 0;
+}
+
+.sign-plus {
+  background-color: #FF6B6B;
+  transform: rotate(-2deg);
+}
+
+.sign-divide {
+  background-color: #FFD34E;
+  color: #7A5300;
+  transform: rotate(2deg);
+}
+
+.sign-multiply {
+  background-color: #54A0FF;
+  transform: rotate(-1deg);
+}
+
+.signpost-base {
+  width: 18px;
+  height: 70px;
+  background-color: #8B5A2B;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* Ikon Bintang Pi (π) Melayang */
+.floating-pi-badge {
+  position: absolute;
+  top: 24px;
+  right: 90px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 900;
+  color: #2875FB;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   3. ANIMASI
+   ========================================================================== */
+@keyframes gentleBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotatePhoneAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-90deg);
+  }
+  60% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* ==========================================================================
+   4. ORIENTATION OVERLAY (PORTRAIT HP)
+   Overlay hanya muncul pada perangkat mobile ketika orientasi portrait.
+   ========================================================================== */
+.orientation-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(18, 59, 138, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  color: var(--color-white);
+}
+
+.rotate-icon-wrapper {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.phone-icon-animated {
+  animation: rotatePhoneAnimation 2.4s ease-in-out infinite;
+  color: var(--color-accent-yellow);
+}
+
+.overlay-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-accent-yellow);
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.overlay-message {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 290px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+/* Tampilkan overlay saat mode portrait pada layar HP */
+@media screen and (orientation: portrait) and (max-width: 900px) {
+  .orientation-overlay {
+    display: flex;
+  }
+}
+
+/* ==========================================================================
+   5. RESPONSIVE LANDSCAPE MOBILE & TABLET
+   Navbar lebih ringkas, logo tetap terlihat, teks di kiri, Luna di kanan
+   ========================================================================== */
+@media screen and (max-height: 550px) {
+  .navbar {
+    height: 60px;
+    padding: 0 20px;
+  }
+
+  .brand-name {
+    font-size: 1.6rem;
+  }
+
+  .brand-divider,
+  .brand-tagline {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-content {
+    padding: 0 24px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-description {
+    font-size: 0.85rem;
+    margin-top: 6px;
+  }
+
+  .cta-container {
+    margin-top: 14px;
+  }
+
+  .btn-primary-explore {
+    padding: 10px 14px 10px 22px;
+    font-size: 0.95rem;
+    gap: 10px;
+  }
+
+  .btn-icon-circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .luna-wrapper {
+    height: 90%;
+    max-height: 380px;
+  }
+
+  .math-signpost {
+    display: none;
+  }
+
+  .floating-pi-badge {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   6. MODAL & DASHBOARD PLACEHOLDER
+   ========================================================================== */
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(18, 59, 138, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal-box {
+  background-color: #FFFFFF;
+  border-radius: 28px;
+  max-width: 520px;
+  width: 100%;
+  padding: 32px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  position: relative;
+  text-align: left;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.modal-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--color-navy);
+}
+
+.modal-btn-close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: #F1F5F9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748B;
+  transition: background 0.2s;
+}
+
+.modal-btn-close:hover {
+  background: #E2E8F0;
+  color: #1E293B;
+}
+
+.modal-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #475569;
+}
+
+.modal-footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ==========================================================================
+   7. DASHBOARD LINTERA STYLES
+   ========================================================================== */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-image: url('assets/dashboard-bg.png');
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  font-family: var(--font-family);
+}
+
+.dashboard-top-nav {
+  position: absolute;
+  top: 20px;
+  right: 32px;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-circle-action {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #2875FB;
+  border: 1px solid #D0E5FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(18, 59, 138, 0.08);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.btn-circle-action:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(18, 59, 138, 0.15);
+  color: #1C64E8;
+}
+
+.btn-circle-action:active {
+  transform: translateY(1px) scale(0.95);
+}
+
+.dashboard-hero {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 36px 40px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-hero-left {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-tagline {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-navy);
+  margin-top: 6px;
+  margin-bottom: 8px;
+}
+
+.dashboard-invite-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 480px;
+}
+
+.dash-accent-ticks {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tick-bar {
+  height: 4px;
+  background-color: var(--color-accent-yellow);
+  border-radius: 9999px;
+}
+
+.tick-left-1 { width: 14px; transform: rotate(-12deg); }
+.tick-left-2 { width: 10px; transform: rotate(6deg); }
+.tick-right-1 { width: 14px; transform: rotate(12deg); }
+.tick-right-2 { width: 10px; transform: rotate(-6deg); }
+
+.dashboard-invite-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.5;
+}
+
+.dashboard-hero-right {
+  width: 45%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.dash-luna-box {
+  width: 290px;
+  height: 250px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: gentleBob 4s ease-in-out infinite;
+}
+
+.dash-luna-img {
+  width: auto;
+  height: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.14));
+}
+
+/* White Menu Container */
+.dashboard-main-area {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px 32px;
+}
+
+.dashboard-white-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 32px;
+  padding: 24px 28px;
+  box-shadow: 0 16px 36px rgba(18, 59, 138, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.dash-menu-card {
+  border-radius: 20px;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+}
+
+.dash-menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.dash-menu-card:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.card-materi { background-color: #E0F2FE; border-color: #BAE6FD; }
+.card-game { background-color: #FFE4D6; border-color: #FFEDD5; }
+.card-simulasi { background-color: #DCFCE7; border-color: #BBF7D0; }
+.card-latihan { background-color: #F3E8FF; border-color: #E9D5FF; }
+.card-refleksi { background-color: #FEF9C3; border-color: #FEF08A; }
+
+.dash-card-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
+}
+
+.dash-card-title {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  margin-bottom: 4px;
+}
+
+.dash-card-desc {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.dash-card-btn-arrow {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.circle-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease;
+}
+
+.dash-menu-card:hover .circle-arrow {
+  transform: translateX(3px);
+}
+
+.arrow-blue { color: #2875FB; }
+.arrow-orange { color: #F57200; }
+.arrow-green { color: #10B981; }
+.arrow-purple { color: #8B5CF6; }
+.arrow-yellow { color: #F59E0B; }
+
+/* Student Greeting Banner */
+.student-greeting-bar {
+  background-color: #EBF5FF;
+  border: 1px solid #D0E5FF;
+  border-radius: 18px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.student-luna-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #63C9F4;
+  border: 2px solid #FFFFFF;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.student-luna-avatar img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.greeting-text-title {
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.greeting-text-desc {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: rgba(18, 59, 138, 0.85);
+  margin-top: 2px;
+}
+
+/* Responsive Dashboard Media Queries */
+@media screen and (max-width: 1024px) {
+  .dashboard-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px 20px 12px;
+  }
+  .dashboard-hero-left {
+    width: 100%;
+    align-items: center;
+  }
+  .dashboard-hero-right {
+    width: 100%;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  .dash-luna-box {
+    width: 220px;
+    height: 190px;
+  }
+  .dashboard-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .dashboard-main-area {
+    padding: 0 16px 24px;
+  }
+/* ==========================================================================
+   8. MATERI BELAJAR STYLES (Flat Blue Background & 3 Cards)
+   ========================================================================== */
+.materi-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--color-sky-blue);
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  padding-bottom: 32px;
+}
+
+.materi-header {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 24px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.materi-title-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.materi-main-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: var(--color-navy);
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+.materi-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  width: 100%;
+  max-width: 1140px;
+  margin: auto;
+  padding: 16px 24px;
+  z-index: 10;
+}
+
+.materi-card-box {
+  border-radius: 36px;
+  border: 4px solid #FFFFFF;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 16px 36px rgba(18, 59, 138, 0.12);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.materi-card-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 48px rgba(18, 59, 138, 0.18);
+}
+
+.materi-card-box:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.materi-card-blue { background-color: #D9F0FF; }
+.materi-card-peach { background-color: #FFE7DC; }
+.materi-card-green { background-color: #DCFCE7; }
+
+.materi-pill-label {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  color: #FFFFFF;
+  font-weight: 900;
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.pill-blue { background-color: #2875FB; }
+.pill-orange { background-color: #F57200; }
+.pill-green { background-color: #10B981; }
+
+.materi-card-heading {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: var(--color-navy);
+  line-height: 1.2;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.materi-card-heading-peach { color: #431407; }
+.materi-card-heading-green { color: #064E3B; }
+
+.materi-illus-row {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.materi-luna-col {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.materi-luna-img {
+  width: auto;
+  height: 90%;
+  max-height: 150px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.materi-diagram-col {
+  width: 52%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.materi-btn-circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+  align-self: flex-end;
+}
+
+.materi-card-box:hover .materi-btn-circle {
+  transform: translateX(4px);
+}
+
+@media screen and (max-width: 900px) {
+  .materi-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+  }
+}
+
+
